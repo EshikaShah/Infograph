@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{  url_for('static', filename='css/main.css')}}"
+    />
+    <script src="https://cdn.anychart.com/releases/v8/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/js/anychart-tag-cloud.min.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>Feedback Analysis</h2>
+    <br />
+    <form action="/" method="post">
+      Name: <input type="text" name="name" id="name" /><br />
+      Comment: <br /><textarea rows="4" cols="50" name="comment"></textarea>
+      <br />
+      <input type="submit" value="Submit" />
+    </form>
+    <br /><br />
+    Keywords: {% for keyword in keywords %}
+
+    <h4>{{keyword}}</h4>
+
+    {% endfor %}
+    <br /><br />
+    Comments: {% for comment in comments %}
+
+    <h3>{{comment.date}} : {{comment.comment}} - {{comment.name}}</h3>
+
+    {% endfor %}
+    <div id="container"></div>
+    <script>
+      anychart.onDocumentReady(function () {
+        // create data
+        var data = [];
+        keywords = document.querySelectorAll("h4");
+        keywords.forEach((element) => {
+            var value1 =Math.floor(Math.random() * 40) + 30;   
+            var n={x:element.innerHTML, value: value1};
+            data.push(n);
+        });
+        
+        // create a chart and set the data
+        chart = anychart.tagCloud(data);
+
+        // set the container id
+        chart.container("container");
+        chart.mode("rect");
+        // initiate drawing the chart
+        chart.draw();
+      });
+    </script>
+  </body>
+</html>
