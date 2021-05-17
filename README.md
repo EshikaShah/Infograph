@@ -18,3 +18,4 @@ We at Infographs comprise a dedicated team to provide business solutions and det
 ![image](https://user-images.githubusercontent.com/63183513/113979134-7f9acb00-9862-11eb-94f5-14dce0c83903.png)
 ![image](https://user-images.githubusercontent.com/63183513/113979146-8295bb80-9862-11eb-8c8e-e418bd119ca6.png)
 ![image](https://user-images.githubusercontent.com/63183513/118524479-d5b13700-b75b-11eb-8223-a3ecad7467eb.png)
+![image](https://user-images.githubusercontent.com/63183513/118524600-f37e9c00-b75b-11eb-8120-daf59c3a6599.png)
